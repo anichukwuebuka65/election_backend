@@ -8,7 +8,9 @@ const addScoreRoute = require("./src/routes/addScores")
 const partyRoute = require("./src/routes/Party")
 const cors = require("cors")
 
-app.use(cors())
+app.use(cors({
+    origin: "https://election-project-gold.vercel.app"
+}))
 app.use(express.json())
 
 app.use("/polling-unit-result",pollUnitResultRoute)
