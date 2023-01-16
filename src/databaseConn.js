@@ -9,7 +9,8 @@ const DATABASE_HOST = process.env.DATABASE_HOST;
 const connection = mysql.createConnection({
     host: DATABASE_HOST,
     user: DATABASE_USERNAME,
-    database: DATABASE_NAME
+    database: DATABASE_NAME,
+    password:DATABASE_PASSWORD
 })
 
 function handleQuery(query) {
