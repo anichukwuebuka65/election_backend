@@ -13,6 +13,8 @@ const connection = mysql.createConnection({
     password:DATABASE_PASSWORD
 })
 
+if(!connection) console.log("no connection")
+
 function handleQuery(query) {
     return (req, res) => {
         connection.query(query,[req.body.id],(err , result) => {
