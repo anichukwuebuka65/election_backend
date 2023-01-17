@@ -1,4 +1,4 @@
-const { handleQuery } = require("../databaseConn")
+const { handleQuery } = require("./databaseConn")
 const router = require("express").Router()
 
 const query = `SELECT polling_unit.uniqueid, 

@@ -6,6 +6,7 @@ const query = `INSERT INTO announced_pu_results (
     ) VALUES (?, ?, ?, ?)`
 
 router.post("/", (req, res) => {
+    
     const {PUId, scores, enteredBy} = req.body
     const arr = []
 
