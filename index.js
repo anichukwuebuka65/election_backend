@@ -7,10 +7,11 @@ const addPURoute = require("./src/routes/addPU")
 const addScoreRoute = require("./src/routes/addScores")
 const partyRoute = require("./src/routes/Party")
 const cors = require("cors")
+require("dotenv").config()
 
 
 app.use(cors({
-    origin: "https://election-project-gold.vercel.app"
+    origin: "*"
 }))
 app.use(express.json())
 
@@ -22,6 +23,6 @@ app.use("/add-score", addScoreRoute)
 app.use("/party", partyRoute)
 app.use("*", ( req, res) => res.status(400).json("invalid route") )
 
+const PORT = process.env.PORT || 3000
 
-
-app.listen(process.env.PORT || 3000, () => console.log("listening for requests"))
+app.listen( PORT , () => console.log("listening for requests on port "+ PORT))

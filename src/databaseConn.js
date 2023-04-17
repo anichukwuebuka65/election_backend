@@ -20,7 +20,9 @@ function handleQuery(query) {
 
 
         connection.query(query,[req.body.id],(err , result) => {
-        if (err) return console.log(err)
+        if (err) { 
+            return res.status(500).json("server error")
+        }
         res.status(200).json(result) ;
         })
 
